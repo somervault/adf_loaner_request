@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="last_overdue_reminder" label="Last overdue reminder" language="en" table="x_cdltd_loaner_r_0_loaner_request">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>last_overdue_reminder</element>
+            <help/>
+            <hint/>
+            <label>Last overdue reminder</label>
+            <language>en</language>
+            <name>x_cdltd_loaner_r_0_loaner_request</name>
+            <plural>Last overdue reminders</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-18 13:22:25</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Last overdue reminder</sys_name>
+            <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
+            <sys_update_name>sys_documentation_x_cdltd_loaner_r_0_loaner_request_last_overdue_reminder_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-18 13:22:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
