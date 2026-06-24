@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cdltd_loaner_r_0.testing commit issue</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>testing commit issue</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var testing_commit_issue = Class.create();
+testing_commit_issue.prototype = {
+    initialize: function() {
+    },
+
+    type: 'testing_commit_issue'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-24 05:38:17</sys_created_on>
+        <sys_id>38c0dd6b93edc3546b0afd245d03d6a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>testing commit issue</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
+        <sys_update_name>sys_script_include_38c0dd6b93edc3546b0afd245d03d6a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-24 05:38:17</sys_updated_on>
+    </sys_script_include>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</application>
+        <file_path/>
+        <instance_id>2b64c9c4ffe7fe1cc812f8e4fc4fd9a6</instance_id>
+        <instance_name>dev366006</instance_name>
+        <name>sys_script_include_38c0dd6b93edc3546b0afd245d03d6a9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;
+    &lt;sys_script_include action="INSERT_OR_UPDATE"&gt;
+        &lt;access&gt;package_private&lt;/access&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;api_name&gt;x_cdltd_loaner_r_0.testing commit issue&lt;/api_name&gt;
+        &lt;caller_access/&gt;
+        &lt;client_callable&gt;false&lt;/client_callable&gt;
+        &lt;description/&gt;
+        &lt;mobile_callable&gt;false&lt;/mobile_callable&gt;
+        &lt;name&gt;testing commit issue&lt;/name&gt;
+        &lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;
+        &lt;script&gt;&lt;![CDATA[var testing_commit_issue = Class.create();
+testing_commit_issue.prototype = {
+    initialize: function() {
+    },
+
+    type: 'testing_commit_issue'
+};]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2026-06-24 05:38:17&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;38c0dd6b93edc3546b0afd245d03d6a9&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;testing commit issue&lt;/sys_name&gt;
+        &lt;sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0"&gt;04b8c227a43003107f443125c74bfc6a&lt;/sys_package&gt;
+        &lt;sys_policy&gt;read&lt;/sys_policy&gt;
+        &lt;sys_scope display_value="Loaner Request"&gt;04b8c227a43003107f443125c74bfc6a&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_include_38c0dd6b93edc3546b0afd245d03d6a9&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2026-06-24 05:38:17&lt;/sys_updated_on&gt;
+    &lt;/sys_script_include&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>-1208988765</payload_hash>
+        <record_name>testing commit issue</record_name>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-24 06:10:50</sys_created_on>
+        <sys_id>b848956b932107546b0afd245d03d6ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ef840b4300000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-24 06:10:50</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>7848956baf21075411ad555bd4f7e1ec</update_guid>
+        <update_guid_history>a3331daf37edc3548b63ced875ce3c99:-325720522,40d0dd6b83edc354f30fdbc048bfaa72:-2065723529</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-24 06:12:54</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>5acf82051b1b40f8ab778f4f6d901584</sys_id>
+        <sys_metadata>38c0dd6b93edc3546b0afd245d03d6a9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>testing commit issue</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
+        <sys_scope_delete display_value="">29d29a8c0ec04368988eaa79de806c04</sys_scope_delete>
+        <sys_update_name>sys_script_include_38c0dd6b93edc3546b0afd245d03d6a9</sys_update_name>
+        <sys_update_version display_value="sys_script_include_38c0dd6b93edc3546b0afd245d03d6a9">b848956b932107546b0afd245d03d6ec</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-24 06:12:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
