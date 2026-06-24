@@ -169,70 +169,47 @@ LoanerUtils.prototype = {
    **********/
 	timeToRemindOverdue : function(id) {
 
-		var gr = new GlideRecord(this.loanerTableName);
+    var gr = new GlideRecord(this.loanerTableName);
 
-		if (!gr.get(id)) {
-			gs.debug('>>>DEBUG: LoanerUtils: timeToRemindOverdue(): FAILED TO RETRIEVE RECORD');
-			return false;
-		}
+    if (!gr.get(id)) {
+        gs.debug('>>>DEBUG: LoanerUtils: timeToRemindOverdue(): FAILED TO RETRIEVE RECORD');
+        return false;
+    }
 
-		// The overdue.remindtime property sets how often to bug the tardy borrower
-		// Subtracting that time from the current time allows us to see if it's time to remind again
-		var noticeTime = new GlideDateTime();
-		noticeTime.subtract(this.overdueRemindTime);
+    var noticeTime = new GlideDateTime();
+    noticeTime.subtract(this.overdueRemindTime);
 
-		var baseDate = (gr.last_overdue_reminder == '') ? gr.end_date : gr.last_overdue_reminder;
-		
-		return (baseDate <= noticeTime) ? true : false;
-		
-		// EXAMPLE 1 -----
-		// overdue.remindtime is set to 24
-		// Original noticeTime is 2:00pm Mar 28
-		// Subtract overdue.remindtime for new noticeTime: 2:00pm Mar 27
-		// baseDate = last_overdue_reminder = 4:00am Mar 28 (10 hours ago)
-		// Is 4:00am Mar 28 before 2:00pm Mar 27?
-		// No, so no send.
-		
-		// EXAMPLE 2 -----
-		// overdue.remindtime is set to 8
-		// Original noticeTime is 2:00pm Mar 28
-		// Subtract overdue.remindtime for new noticeTime: 6:00am Mar 28
-		// baseDate = last_overdue_reminder = 4:00am Mar 28 (10 hours ago)
-		// Is 4:00am Mar 28 before 6:00am Mar 28?
-		// Yes, so send.
-		
-	},
+    var baseDate;
 
-	/**********
-   *
-   * sendOverdueReminder - Queue an event to send another reminder and update the necessary
-   *                       record fields to indicate they've been reminded
-   *
-   * @param - id: sys_id of the loaner record to check
-   * @return - None
-   *
-   **********/
-	sendOverdueReminder : function(id) {
+    if (gs.nil(gr.last_overdue_reminder)) {
+        baseDate = new GlideDateTime(gr.end_date);
+    } else {
+        baseDate = new GlideDateTime(gr.last_overdue_reminder);
+    }
 
-		var gr = new GlideRecord(this.loanerTableName);
+    return baseDate.before(noticeTime);
+},
 
-		if (!gr.get(id)) {
-			gs.error('>>>DEBUG: LoanerUtils: setLastOverdueReminder(): FAILED TO RETRIEVE RECORD');
-			return;
-		}
+sendOverdueReminder : function(id) {
 
-		// Currently there is no application logic that uses the overdue count
-		// What future requirement would _you_ use this for? ;-)
-		++gr.overdue_count;
+    var gr = new GlideRecord(this.loanerTableName);
 
-		// Record the last time a reminder was sent
-		gr.last_overdue_reminder = new GlideDateTime().getDisplayValue();
-		gr.update();
+    if (!gr.get(id)) {
+        gs.error('LoanerUtils: sendOverdueReminder(): FAILED TO RETRIEVE RECORD: ' + id);
+        return;
+    }
 
-		// Send the overdue reminder
-		gs.eventQueue(this.overdueEvent, gr, gr.start_date, gr.end_date);
-		return;
-	},
+    gs.info('LoanerUtils: Updating overdue record: ' + gr.number);
+
+    gr.overdue_count = parseInt(gr.overdue_count || 0, 10) + 1;
+    gr.last_overdue_reminder = new GlideDateTime();
+
+    var updatedSysId = gr.update();
+
+    gs.info('LoanerUtils: Overdue update result: ' + updatedSysId + ', count=' + gr.overdue_count);
+
+    gs.eventQueue(this.overdueEvent, gr, gr.start_date, gr.end_date);
+},
 
 	type: 'LoanerUtils'
 };]]></script>
@@ -240,13 +217,13 @@ LoanerUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-05-28 03:14:19</sys_created_on>
         <sys_id>5eebe5f6210103107f445c47a3ac9e91</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>LoanerUtils</sys_name>
         <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
         <sys_update_name>sys_script_include_5eebe5f6210103107f445c47a3ac9e91</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-05-28 03:14:19</sys_updated_on>
+        <sys_updated_on>2026-06-24 04:50:32</sys_updated_on>
     </sys_script_include>
 </record_update>
