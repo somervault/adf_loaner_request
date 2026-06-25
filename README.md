@@ -105,3 +105,27 @@ ServiceNow Certified Application Developer (CAD)
 - Implemented and tested pickup, return, and overdue scheduled jobs.
 - Fixed overdue reminder processing and record updates.
 - Verified event generation and email delivery for reminder notifications.
+
+### 25 Jun 2026
+- Created a Service Catalog item for Loaner Device Requests.
+- Designed reusable Variable Set and catalog variables.
+- Implemented a Record Producer to create Loaner Request records.
+- Mapped catalog variables to Loaner Request fields.
+- Built and tested the approval workflow for loaner requests.
+- Automated request state updates after approval or rejection.
+
+#### Loaner Device Request Workflow
+
+```mermaid
+flowchart TD
+    A[Employee submits Loaner Device Request] --> B[Record Producer]
+    B --> C[Loaner Request Record Created]
+    C --> D[Approval Request Generated]
+    D --> E{Manager/Admin Decision}
+
+    E -->|Approved| F[Update Request State]
+    F --> G[Ready for Pickup]
+
+    E -->|Rejected| H[Update Request State]
+    H --> I[Closed Complete]
+```
