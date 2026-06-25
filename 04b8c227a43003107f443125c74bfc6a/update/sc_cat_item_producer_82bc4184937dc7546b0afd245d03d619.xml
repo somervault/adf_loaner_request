@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item">
-    <sc_cat_item action="INSERT_OR_UPDATE">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
+    <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <access_type>restricted</access_type>
         <active>true</active>
+        <allow_edit>false</allow_edit>
         <availability>on_desktop</availability>
         <billable>false</billable>
+        <can_cancel>false</can_cancel>
         <category display_value="Loaner Services">5a302b339321c7546b0afd245d03d6f6</category>
         <cc_render_type/>
         <checked_out/>
@@ -12,7 +14,7 @@
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p>Use this catalog item to request a temporary loaner device. Once submitted, the request is routed for manager approval. After approval, the device is prepared for pickup and automated pickup, return, and overdue reminders are sent.</p>]]></description>
+        <description><![CDATA[<p>Use this form to request a temporary loaner device. The request will be routed for approval and tracked through pickup, return, and overdue reminders.</p>]]></description>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
         <flow_designer_flow/>
@@ -30,7 +32,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Request Loaner Device</name>
+        <name>Loaner Device Request</name>
         <no_attachment_v2>false</no_attachment_v2>
         <no_cart>false</no_cart>
         <no_cart_v2>false</no_cart_v2>
@@ -48,80 +50,91 @@
         <ordered_item_link/>
         <owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner>
         <picture/>
-        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=09e0ef739321c7546b0afd245d03d601&amp;sysparm_preview=true", "summary");</preview>
+        <post_insert_script><![CDATA[/**
+* This script is executed after the record is generated. 
+* `current` Is the GlideRecord produced by Record Producer. Use `current.update()` to update the record
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></post_insert_script>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=82bc4184937dc7546b0afd245d03d619&amp;sysparm_preview=true", "summary");</preview>
         <price>0</price>
         <published_ref/>
         <recurring_frequency/>
-        <recurring_price>0</recurring_price>
+        <redirect_url>generated_record</redirect_url>
         <request_method/>
         <roles/>
+        <save_options/>
+        <save_script><![CDATA[/**
+* This script is executed at every step save in Catalog Builder. 
+* This script is executed before `Script` is executed.
+* `current` Is the GlideRecord produced by Record Producer. 
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></save_script>
         <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
         <sc_ic_item_staging/>
         <sc_ic_version/>
         <sc_template/>
+        <script><![CDATA[current.requested_for = producer.requested_for;
+current.cmdb_ci = producer.configuration_item;
+current.item_type = producer.item_type;
+current.start_date = producer.start_date;
+current.end_date = producer.end_date;
+current.location_to_be_used = producer.pickup_location;
+current.description = producer.business_justification;
+
+current.short_description =
+    "Loaner " + producer.item_type + " requested for " + producer.requested_for.getDisplayValue();
+
+current.approval = 'requested';]]></script>
         <secondary_owners/>
-        <short_description>Request a temporary loaner laptop or device for business use.</short_description>
+        <short_description>Submit a request for a temporary loaner device.</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
         <state/>
-        <sys_class_name>sc_cat_item</sys_class_name>
+        <sys_class_name>sc_cat_item_producer</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-06-25 10:52:31</sys_created_on>
-        <sys_id>09e0ef739321c7546b0afd245d03d601</sys_id>
-        <sys_mod_count>13</sys_mod_count>
-        <sys_name>Request Loaner Device</sys_name>
+        <sys_created_on>2026-06-25 18:39:13</sys_created_on>
+        <sys_id>82bc4184937dc7546b0afd245d03d619</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Loaner Device Request</sys_name>
         <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
-        <sys_update_name>sc_cat_item_09e0ef739321c7546b0afd245d03d601</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-06-25 18:34:59</sys_updated_on>
+        <sys_update_name>sc_cat_item_producer_82bc4184937dc7546b0afd245d03d619</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-25 19:55:08</sys_updated_on>
+        <table_name>x_cdltd_loaner_r_0_loaner_request</table_name>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>13</version>
+        <version>5</version>
+        <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
-    </sc_cat_item>
-    <sys_translated_text action="delete_multiple" query="documentkey=09e0ef739321c7546b0afd245d03d601"/>
-    <fx_price action="delete_multiple" query="id=09e0ef739321c7546b0afd245d03d601"/>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=82bc4184937dc7546b0afd245d03d619"/>
+    <fx_price action="delete_multiple" query="id=82bc4184937dc7546b0afd245d03d619"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
-        <id>09e0ef739321c7546b0afd245d03d601</id>
+        <id>82bc4184937dc7546b0afd245d03d619</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-06-25 10:52:35</sys_created_on>
-        <sys_id>7952af379321c7546b0afd245d03d64f</sys_id>
+        <sys_created_on>2026-06-25 18:39:13</sys_created_on>
+        <sys_id>592d8184937dc7546b0afd245d03d6b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-25 10:52:35</sys_updated_on>
-        <table>sc_cat_item</table>
-        <type>calculated</type>
-    </fx_price>
-    <fx_price action="INSERT_OR_UPDATE">
-        <amount>0</amount>
-        <currency display_value="USD">USD</currency>
-        <field>recurring_price</field>
-        <id>09e0ef739321c7546b0afd245d03d601</id>
-        <parent/>
-        <reference_amount>0</reference_amount>
-        <reference_currency display_value="USD">USD</reference_currency>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-06-25 10:52:35</sys_created_on>
-        <sys_id>fd52af379321c7546b0afd245d03d651</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-25 10:52:35</sys_updated_on>
-        <table>sc_cat_item</table>
+        <sys_updated_on>2026-06-25 18:39:13</sys_updated_on>
+        <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>
 </record_update>
