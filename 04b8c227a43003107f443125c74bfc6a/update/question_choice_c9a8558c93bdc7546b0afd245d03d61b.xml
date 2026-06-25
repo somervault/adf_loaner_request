@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>200</order>
+        <published_ref/>
+        <question display_value="Pickup Location">9ce2d14093bdc7546b0afd245d03d687</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-25 19:29:42</sys_created_on>
+        <sys_id>c9a8558c93bdc7546b0afd245d03d61b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New York</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">04b8c227a43003107f443125c74bfc6a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">04b8c227a43003107f443125c74bfc6a</sys_scope>
+        <sys_update_name>question_choice_c9a8558c93bdc7546b0afd245d03d61b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-25 19:29:42</sys_updated_on>
+        <text>New York</text>
+        <value>New York</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=c9a8558c93bdc7546b0afd245d03d61b"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>c9a8558c93bdc7546b0afd245d03d61b</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-25 19:29:42</sys_created_on>
+        <sys_id>bcb8d58c93bdc7546b0afd245d03d606</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-25 19:29:42</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>c9a8558c93bdc7546b0afd245d03d61b</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-25 19:29:42</sys_created_on>
+        <sys_id>74b8d58c93bdc7546b0afd245d03d606</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-25 19:29:42</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>
