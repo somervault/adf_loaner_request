@@ -2,7 +2,7 @@
 
 A ServiceNow-based Loaner Request Management application designed to manage temporary device requests, approval routing, asset allocation, pickup reminders, return reminders, and overdue notifications.
 
-This project demonstrates end-to-end ServiceNow application development using custom tables, Service Catalog, Record Producers, Variable Sets, Flow Designer, Script Includes, Scheduled Script Executions, Event Registrations, Email Notifications, ACLs, and GitLab source control.
+This project demonstrates end-to-end ServiceNow application development using custom tables, Service Catalog, Record Producers, Variable Sets, Flow Designer, Script Includes, Scheduled Script Executions, Event Registrations, Email Notifications, ACLs, and GitHub source control.
 
 ---
 
